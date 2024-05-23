@@ -2,6 +2,10 @@
 
 Welcome to the Hadiya Products Website repository. This application is designed to create a robust and user-friendly website for Hadiya Products, hosted on Azure. The website showcases a variety of products and provides a seamless shopping experience for users.
 
+**Usage**
+Open your browser and navigate to [https://hadiyafrontend.z13.web.core.windows.net/] to see the frontend.
+The backend server will be running on http://localhost:3000.
+
 ## Table of Contents
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
