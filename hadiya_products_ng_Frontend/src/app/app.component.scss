@@ -1,0 +1,10 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    margin: 1rem 0 3rem 0;
+    vertical-align: text-bottom;
+}
+.head > .head-element{
+    display: inline;
+}

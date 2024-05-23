@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+        <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">All</li>
+              <li class="list-group-item">Electronics</li>
+              <li class="list-group-item">Health care</li>
+            </ul>
+          </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="input-group mb-3">
+          <a routerLink="/form" class="btn btn-outline-primary rounded" style="margin-right: 1rem;">Add Product</a>
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-outline-primary">search</button>
+      </div>
+      <div class="product-cards container-sm">
+        <div class="row">
+            <ng-container *ngIf="!products">
+              <h4 style="text-align: center; margin-top: 2rem;">No records found.</h4>
+            </ng-container>
+            <ng-container *ngIf="!!products">
+              <div class="card-col col-sm-12" *ngFor="let product of products | paginate: {itemsPerPage: limit, currentPage: currentPage, totalItems: totalCount};">
+                <div class="card mb-3">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img class="card-img-top" src="{{product.getImageURL()}}" alt="Card image cap">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ product.getName() }}</h5>
+                        <b class="card-price">{{ product.getPrice() }}</b>&nbsp;
+                        <i class="card-currency">{{ product.getCurency() }}</i><br>
+                        <div class="actions">
+                            <a [routerLink]="['/form', product.getId() ]" class="btn btn-outline-primary" style="margin: 0.5rem 1rem;">Edit</a>
+                            <button (click)="deleteProduct(product.getId()!)" class="btn btn-outline-danger" style="margin: 0.5rem 1rem;">Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="paginator mt-4">
+              <pagination-controls class="pagination" (pageChange)="pageChange($event)"></pagination-controls>
+            </div>
+            </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

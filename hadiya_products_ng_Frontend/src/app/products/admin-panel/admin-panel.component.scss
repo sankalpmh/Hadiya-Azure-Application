@@ -1,0 +1,24 @@
+.card-title{
+    font-size: 1rem;
+}
+.card-img-top{
+    max-height: 200px;
+    object-fit: contain;
+}
+.card-price{
+    font-size: 1.5rem;
+}
+.paginator{
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions{
+    text-align: right;
+}
+
+.actions > a, .actions > button{
+    width: 10rem;
+}

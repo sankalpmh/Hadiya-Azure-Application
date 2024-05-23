@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">All</li>
+                  <li class="list-group-item">Electronics</li>
+                  <li class="list-group-item">Health care</li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="input-group mb-3">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary">search</button>
+            </div>
+            <div class="product-cards container-sm">
+                <div class="row">
+                    <div class="card-col col-sm-4 col-sm-offset-2" *ngFor="let product of products;">
+                        <div class="card">
+                            <img class="card-img-top" src="{{product.getImageURL()}}" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ product.getName() | truncate:70 }}</h5>
+                              <b class="card-price">{{ product.getPrice() }}</b>&nbsp;
+                              <i class="card-currency">{{ product.getCurency() }}</i><br>
+                              <a href="#" class="btn btn-primary" style="width: 100%; margin: 0.5rem 0;">Buy Now</a>
+                              <a href="#" class="btn btn-sm btn-outline-primary" style="width: 100%; margin: 0.5rem 0;">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="paginator mt-4">
+                <nav aria-label="Products Paginator">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+</div>
